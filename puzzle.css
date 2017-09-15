@@ -1,0 +1,104 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+body{
+  height:100%;
+  width:100%;
+}
+
+#container{
+  position:relative;
+  width: 700px;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 100px;
+  border-radius: 2px;
+}
+
+#game{
+  position: absolute;
+  width: 450px;
+  height:450px;
+  border-radius:5px;
+  display: inline-block;
+  background-color: #3F647E;
+  box-shadow: 5px 5px 40px #3F647E;
+}
+
+#game div{
+  position: absolute;
+  width: 148px;
+  height:148px;
+  border: 2px solid #2c4658;
+  border-radius: 10px;
+  background-color: #658397;
+  color: #fff;
+  text-align: center;
+  font-family: monospace;
+  font-size: 11em;
+  line-height: 150px;
+  /*change the mouse cursor*/
+  cursor:pointer;
+  -webkit-transition:0.3s;
+}
+
+#game div:hover{
+  color: #7BBECD;
+}
+
+#control{
+  width: 200px;
+  height: 450px;
+  display: inline-block;
+  float: left;
+}
+
+#control h3{
+  height: 30px;
+  font-size:1.7em;
+  font-family: monospace;
+  margin-top: 20px;
+}
+
+#start,#reset{
+  display: inline-block;
+  width: 100px;
+  height: 28px;
+  background-color: #658397;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #658397;
+  color: white;
+  text-align: center;
+  padding-top:5px;
+  cursor: pointer;
+}
+
+#block1{
+    left: 0px;
+}
+#block2{
+    left: 150px;
+}
+#block3{
+    left: 300px;
+}
+#block4{
+    top: 150px;
+}
+#block5{
+    top: 150px;
+    left: 150px;
+}
+#block6{
+    top: 150px;
+    left: 300px;
+}
+#block7{
+    top: 300px;
+}
+#block8{
+    left: 150px;
+    top: 300px;
+}

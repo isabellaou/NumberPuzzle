@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Number Puzzle</title>
+    <link rel="stylesheet" type="text/css" href="puzzle.css">
+    <script type="text/javascript" src="puzzle.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="control">
+            <p>
+                <h3 id="timeText">Total Time</h3>
+                <h3 id="timer"></h3>
+            </p>
+            <p>
+                <h3 id="start" onclick="start()">Start</h3>
+                <h3 id="reset" onclick="reset()">Reset</h3>
+            </p>
+        </div>
+        <!-- Game Board, the larger div -->
+        <div id="game">
+            <!-- 8 blocks and when click on them move() function is called -->
+            <div id="block1" onclick="move(1)">1</div>
+            <div id="block2" onclick="move(2)">2</div>
+            <div id="block3" onclick="move(3)">3</div>
+            <div id="block4" onclick="move(4)">4</div>
+            <div id="block5" onclick="move(5)">5</div>
+            <div id="block6" onclick="move(6)">6</div>
+            <div id="block7" onclick="move(7)">7</div>
+            <div id="block8" onclick="move(8)">8</div>
+        </div>
+
+    </div>
+</body>
+</html>
