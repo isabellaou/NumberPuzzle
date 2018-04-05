@@ -124,21 +124,48 @@ function reset(){
     start();
   }
 }
-function random_block(){
-  for(var i=9; i>1; --i){
-    var random_loc = parseInt(Math.random()*(i-1)+1);
-    if(block[i]!=0){
-      document.getElementById("block"+block[i]).style.left=block_position[random_loc][0]+"px";
-      document.getElementById("block"+block[i]).style.top=block_position[random_loc][1]+"px";
 
+function shuffle(array) {
+  for (var i = 9; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i - 1)+1);
+        console.log('j=' + j)
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
-    if(block[random_loc]!=0){
-            document.getElementById("block"+block[random_loc]).style.left=block_position[i][0]+"px";
-            document.getElementById("block"+block[random_loc]).style.top=block_position[i][1]+"px";
+
+  return array;
+}
+
+function random_block(){
+  var shuffle_array = new Array(10);
+  var solvable = false;
+  var inversion = 0;
+  while (!solvable){
+    shuffle_array = shuffle(block);
+    inversion = 0;
+    for (var i = 1; i <shuffle_array.length; i++){
+      for(var j = 2; j < shuffle_array.length; j++){
+        if(shuffle_array[i] != 0 && shuffle_array[j] != 0){
+          if(shuffle_array[i]>shuffle_array[j]){
+            console.log('i=' + shuffle_array[i] + ' j=' +shuffle_array[j])
+            inversion++;
+          }
         }
-    var temp = block[random_loc];
-    block[random_loc] = block[i];
-    block[i] = temp;
+        
+      }
+    }
+    if(inversion%2 == 0){
+      solvable = true;
+    }
+  }
+  console.log('inversion=' + inversion)
+  console.log(shuffle_array);
+  for(var i=9; i>0; --i){
+    if(block[i]!=0){
+      document.getElementById("block"+shuffle_array[i]).style.left=block_position[i][0]+"px";
+      document.getElementById("block"+shuffle_array[i]).style.top=block_position[i][1]+"px";
+    }
   }
 }
 window.onload=function(){
